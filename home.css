@@ -36,3 +36,106 @@ body {
     color: white;
 }
 
+/* css for cards */
+.Category {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0px;
+
+}
+
+.Category .CategoryProducts {
+    position: relative;
+    background-color: white;
+    margin: 20px;
+    padding: 0px 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.Category .CategoryProducts h5 {
+    display: inline-block;
+    height: 18px;
+    background-color: #E16120;
+    text-align: center;
+    border-radius: 5px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: lighter;
+    letter-spacing: 1px;
+    color: white;
+    padding: 3px 5px;
+    text-transform: uppercase;
+    font-size: smaller;
+    position: absolute;
+    right: 10px;
+    top: -15px;
+}
+
+.CategoryProducts img {
+    border-radius: 6px;
+    margin: 10px 0px;
+}
+
+/* banner-css */
+.banner .bannerimg img {
+    height: 500px;
+    width: 100%;
+    object-fit: cover;
+    position: relative;
+}
+
+.main h1 {
+    padding: 0px 25px;
+    position: relative;
+
+}
+
+.line {
+    width: 90px;
+    height: 5px;
+    background-color: #E16120;
+    position: absolute;
+    left: 25px;
+}
+
+.banner .searchCont {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner .search input {
+    width: 400px;
+    height: 70px;
+    border-radius: 40px;
+    font-size: large;
+    padding: 0px 40px;
+    color: aliceblue;
+    font-weight: 500;
+    margin:0px 20px;
+    border: none;
+}
+
+.banner .searchCont .search-icon {
+    width: 70px;
+    height: 70px;
+    background-color: #E16120;
+    border-radius: 80px;
+    font-size: 23px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: lighter;
+    border: 2px solid white;
+}
+
+.banner .searchCont{
+    position: relative;
+    top: -320px;
+}
