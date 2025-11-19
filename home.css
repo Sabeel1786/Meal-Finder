@@ -29,3 +29,10 @@ body {
     color: white;
     text-decoration: none;
 }
+
+.right .DropDown {
+    padding: 0px 40px;
+    background-color: #E16120;
+    color: white;
+}
+
