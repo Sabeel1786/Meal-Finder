@@ -30,10 +30,19 @@ body {
     text-decoration: none;
 }
 
-.right .DropDown {
+.right .DropDownIcon {
     padding: 0px 40px;
     background-color: #E16120;
     color: white;
+}
+
+.right .DropDownIcon i {
+    font-size: 28px;
+}
+
+.DropDownIcon:hover {
+    transform: translateY(-5px);
+    transition: 0.3s;
 }
 
 /* css for cards */
@@ -43,8 +52,6 @@ body {
     background-color: white;
     justify-content: center;
     align-items: center;
-    padding: 50px 0px;
-
 }
 
 .Category .CategoryProducts {
@@ -113,10 +120,11 @@ body {
     border-radius: 40px;
     font-size: large;
     padding: 0px 40px;
-    color: aliceblue;
+    color: gray;
     font-weight: 500;
-    margin:0px 20px;
+    margin: 0px 20px;
     border: none;
+    z-index: 10;
 }
 
 .banner .searchCont .search-icon {
@@ -135,7 +143,69 @@ body {
     border: 2px solid white;
 }
 
-.banner .searchCont{
+.banner .searchCont {
     position: relative;
     top: -320px;
+}
+
+.banner .bannercont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    bottom: 310px;
+    color: white;
+    font-size: 25px;
+}
+
+.banner {
+    margin-bottom: -150px;
+}
+
+/* navbar hamburgermenu */
+.DropdownMenu {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    display: inline-block;
+    z-index: 20;
+    width: 20vw;
+    height: 90vh;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateX(100%);
+    transition: transform 0.4s ease;
+}
+.DropdownMenu.show {
+    transform: translateX(0);
+}
+
+.DropdownMenu ul li {
+    padding: 12px;
+    list-style: none;
+    border-bottom: 1px solid #ddd;
+    /* light grey underline */
+    font-size: 15px;
+}
+
+.DropdownMenu ul a {
+    text-decoration: none;
+    color: black;
+}
+
+.DropdownMenu ul li:hover {
+    color: #E16120;
+}
+
+.DropdownMenu .icon {
+    position: absolute;
+    right: 0%;
+    font-size: 30px;
+    color: #E16120;
+    padding: 0px 10px;
+}
+.DropdownMenu .icon:hover{
+    color: black;
+    transform: translateY(2px);
 }

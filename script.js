@@ -9,7 +9,7 @@ fetchData()
 
 
 function DataDisplay(products) {
-    const Category = document.querySelector(".Category") 
+    const Category = document.querySelector(".Category")
     let product = "";
     products.forEach((prod) => {
         product += `
@@ -19,8 +19,20 @@ function DataDisplay(products) {
         <a href="${prod.idCategory}"></a>
         </div>`;
     })
-     Category.innerHTML = product
+    Category.innerHTML = product
 }
+
+
+const DropDownIcon = document.querySelector(".DropDownIcon")
+const menu = document.querySelector(".DropdownMenu")
+const icon = document.querySelector(".DropdownMenu .icon i")
+DropDownIcon.addEventListener("click", () => {
+    menu.classList.add("show");
+});
+icon.addEventListener("click", () => {
+    menu.classList.remove("show");
+});
+
 
 
 
