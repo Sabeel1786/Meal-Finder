@@ -16,7 +16,6 @@ function DataDisplay(products) {
         <div class="CategoryProducts">
         <h5 id="title">${prod.strCategory}</h5>
         <img src="${prod.strCategoryThumb}" alt="${prod.strCategory}">
-        <a href="${prod.idCategory}"></a>
         </div>`;
     })
     Category.innerHTML = product
@@ -41,7 +40,7 @@ icon.addEventListener("click", () => {
 
 // search for meals
 async function mealfetch(foodName) {
-     document.getElementById("loader").style.display = "block";
+    document.getElementById("loader").style.display = "block";
     const response = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${foodName}`);
     const mealdata = await response.json();
     document.getElementById("loader").style.display = "none";
@@ -71,7 +70,7 @@ function DisplayMeal(data) {
 
 
 function searchMeal(prod) {
-    const errormsg= document.querySelector("#errormsg")
+    const errormsg = document.querySelector("#errormsg")
     const filterproducts = document.querySelector("#filterproducts");
     const searchIcon = document.querySelector(".search-icon");
     let result = "";
@@ -79,15 +78,21 @@ function searchMeal(prod) {
     filterproducts.addEventListener("keyup", () => {
         result = filterproducts.value;
 
+        if (result.length === 0) {
+            document.querySelector(".meal").innerHTML = "";
+            document.querySelector(".mealtitle").innerHTML = "";
+            errormsg.style.display = "none";
+        }
+
     });
     searchIcon.addEventListener("click", () => {
         if (result.length > 0) {
             mealfetch(result);
         }
-        else{
-            errormsg.innerHTML="please enter a recipe name!"
+        else {
+            errormsg.innerHTML = "please enter a recipe name!"
             errormsg.style.display = "block";
-            
+
         }
     })
 }

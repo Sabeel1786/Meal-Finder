@@ -1,0 +1,230 @@
+#NavBar {
+    height: 80px;
+    background-color: #E16120;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+header {
+    z-index: 30;
+    position: sticky;
+    top: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+* {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#NavBar .left {
+    display: flex;
+    align-items: center;
+}
+
+#NavBar .left .icon {
+    padding: 0px 16px;
+    color: white;
+}
+
+#NavBar .left .logo h1 a {
+    color: white;
+    text-decoration: none;
+}
+
+#NavBar .left .logo h1:hover {
+    transform: scale(1.05);
+}
+
+.right .DropDownIcon {
+    padding: 0px 40px;
+    background-color: #E16120;
+    color: white;
+}
+
+.right .DropDownIcon i {
+    font-size: 28px;
+}
+
+.DropDownIcon:hover {
+    transform: translateY(-5px);
+    transition: 0.3s;
+}
+
+.banner .bannerimg img {
+    height: 500px;
+    width: 100%;
+    object-fit: cover;
+    position: relative;
+}
+
+.main h1 {
+    padding: 0px 25px;
+    position: relative;
+
+}
+
+.line {
+    width: 90px;
+    height: 5px;
+    background-color: #E16120;
+    position: absolute;
+    left: 25px;
+}
+
+.banner .searchCont {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner .search input {
+    width: 400px;
+    height: 70px;
+    border-radius: 40px;
+    font-size: large;
+    padding: 0px 40px;
+    color: gray;
+    font-weight: 500;
+    margin: 0px 20px;
+    border: none;
+    z-index: 10;
+}
+
+.banner .searchCont .search-icon {
+    width: 70px;
+    height: 70px;
+    background-color: #E16120;
+    border-radius: 80px;
+    font-size: 23px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: lighter;
+    border: 2px solid white;
+}
+
+.banner .searchCont .search-icon:hover {
+
+    background-color: white;
+    color: #E16120;
+    border: 2px solid #E16120;
+    cursor: pointer;
+    transform: translateY(-5px);
+    transition: 0.3s;
+}
+
+.banner .searchCont {
+    position: relative;
+    top: -320px;
+}
+
+.banner .bannercont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    bottom: 310px;
+    color: white;
+    font-size: 25px;
+}
+
+.banner {
+    margin-bottom: -150px;
+}
+
+/* navbar hamburgermenu */
+.DropdownMenu {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    display: inline-block;
+    z-index: 20;
+    width: 20vw;
+    height: 90vh;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateX(100%);
+    transition: transform 0.4s ease;
+}
+
+.DropdownMenu.show {
+    transform: translateX(0);
+}
+
+.DropdownMenu ul li {
+    padding: 12px;
+    list-style: none;
+    border-bottom: 1px solid #ddd;
+    /* light grey underline */
+    font-size: 15px;
+}
+
+.DropdownMenu ul a {
+    text-decoration: none;
+    color: black;
+}
+
+.DropdownMenu ul li:hover {
+    color: #E16120;
+}
+
+.DropdownMenu .icon {
+    position: absolute;
+    right: 0%;
+    font-size: 30px;
+    color: #E16120;
+    padding: 0px 10px;
+}
+
+.DropdownMenu .icon:hover {
+    color: black;
+    transform: translateY(2px);
+}
+
+/* cards css */
+.category {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+}
+
+.category .CatDataCards {
+    position: relative;
+    background-color: white;
+    margin: 20px;
+    padding: 0px 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.CatDataCards img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.1s ease;
+    border-radius: 6px;
+    margin: 10px 0px;
+}
+
+.CatDataCards img:hover {
+    transform: scale(0.90)
+}
+
+.CatDataCards .catTitle{
+ padding:0px 5px;
+ font-size: 18px;
+ font-weight: 700;
+    
+}
