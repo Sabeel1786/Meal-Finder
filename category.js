@@ -1,5 +1,5 @@
-async function fetchingCategoryData(Category) {
-    const response = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${Category}`);
+async function fetchingCategoryData(ID) {
+    const response = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i={ID}`);
     const resultData = await response.json();
     console.log(resultData.meals);
     DisplaycatData(resultData.meals)
