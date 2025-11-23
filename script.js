@@ -4,6 +4,7 @@ async function fetchData() {
     const data = await response.json()
     console.log(data.categories);
     DataDisplay(data.categories)
+    filterCat(data.categories)
 }
 fetchData()
 
@@ -13,12 +14,24 @@ function DataDisplay(products) {
     let product = "";
     products.forEach((prod) => {
         product += `
-        <div class="CategoryProducts">
+        <div class="CategoryProducts" data-category="${prod.strCategory}">
         <h5 id="title">${prod.strCategory}</h5>
         <img src="${prod.strCategoryThumb}" alt="${prod.strCategory}">
         </div>`;
     })
     Category.innerHTML = product
+    document.querySelectorAll(".CategoryProducts").forEach(card => {
+        card.addEventListener("click", () => {
+            const categoryName = card.getAttribute("data-category");
+
+            // Save category in localStorage
+            localStorage.setItem("selectedCategory", categoryName);
+
+            // Go to next page
+            window.location.href = "category.html";
+        });
+    });
+
 }
 
 
@@ -98,7 +111,18 @@ function searchMeal(prod) {
 }
 searchMeal();
 
+const dropdownItems = document.querySelectorAll(".dropdown-list li");
 
+dropdownItems.forEach(item => {
+    item.addEventListener("click", () => {
+        const categoryName = item.getAttribute("data-category");
 
+        // Save to localStorage
+        localStorage.setItem("selectedCategory", categoryName);
+
+        // Redirect to category page
+        window.location.href = "category.html";
+    });
+});
 
 
