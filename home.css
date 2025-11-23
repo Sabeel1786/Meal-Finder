@@ -75,6 +75,7 @@ body {
 }
 
 .Category .CategoryProducts h5 {
+    z-index: 20;
     display: inline-block;
     height: 18px;
     background-color: #E16120;
@@ -93,8 +94,15 @@ body {
 }
 
 .CategoryProducts img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.1s ease;
     border-radius: 6px;
     margin: 10px 0px;
+}
+
+.CategoryProducts img:hover {
+    transform: scale(0.90)
 }
 
 /* banner-css */
@@ -244,7 +252,7 @@ body {
     align-items: center;
 }
 
-.meal #mealprod{
+.meal #mealprod {
     position: relative;
     background-color: white;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -257,16 +265,17 @@ body {
     border-radius: 6px;
     display: block;
 }
-.meal #mealprod #title{
+
+.meal #mealprod #title {
     display: inline-block;
     height: 18px;
-    background-color:white;
+    background-color: white;
     text-align: center;
     border-radius: 5px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-weight: lighter;
     letter-spacing: 1px;
-    color:#E16120;
+    color: #E16120;
     padding: 3px 5px;
     text-transform: uppercase;
     font-size: smaller;
@@ -275,7 +284,45 @@ body {
     top: -15px;
     border-radius: 15px;
 }
-#mealprod #origin,#dish{
-    padding:0px 30px;
+
+#mealprod #origin,
+#dish {
+    padding: 0px 30px;
     margin: 10px;
+}
+
+/* loading icon */
+.loader {
+    width: 60px;
+    height: 60px;
+    border: 6px solid #eee;
+    border-top-color: #E16120;
+    border-radius: 50%;
+    animation: spin 0.5s linear infinite;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    /* hidden by default */
+    z-index: 9999;
+}
+
+@keyframes spin {
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+/* error message */
+#errormsg {
+    color: red;
+    background-color: white;
+    font-size: 20px;
+    margin-top: 5px;
+    padding: 0px 50px;
+    border-radius: 15px;
+    display: none;
+
 }

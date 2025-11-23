@@ -41,8 +41,10 @@ icon.addEventListener("click", () => {
 
 // search for meals
 async function mealfetch(foodName) {
+     document.getElementById("loader").style.display = "block";
     const response = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${foodName}`);
     const mealdata = await response.json();
+    document.getElementById("loader").style.display = "none";
     console.log(mealdata.meals);
     DisplayMeal(mealdata.meals)
 }
@@ -50,20 +52,26 @@ async function mealfetch(foodName) {
 
 function DisplayMeal(data) {
     const meal = document.querySelector(".meal")
+    const mealtitle = document.querySelector(".mealtitle")
     let mealproducrts = "";
+    let title = `<h1>MEALS</h1>
+        <div class="line"></div>`;
     data.forEach((prod) => {
-        mealproducrts += `<div id="mealprod">
+        mealproducrts += `
+        <div id="mealprod">
         <h5 id="title">${prod.strCategory}</h5>
         <img src="${prod.strMealThumb}" alt="">
         <span id="origin">Dish Origin: ${prod.strArea}</span>
          <h5 id="dish">Dish Name: ${prod.strMeal}</h5>
         </div>`
     })
+    mealtitle.innerHTML = title
     meal.innerHTML = mealproducrts
 }
 
 
 function searchMeal(prod) {
+    const errormsg= document.querySelector("#errormsg")
     const filterproducts = document.querySelector("#filterproducts");
     const searchIcon = document.querySelector(".search-icon");
     let result = "";
@@ -75,6 +83,11 @@ function searchMeal(prod) {
     searchIcon.addEventListener("click", () => {
         if (result.length > 0) {
             mealfetch(result);
+        }
+        else{
+            errormsg.innerHTML="please enter a recipe name!"
+            errormsg.style.display = "block";
+            
         }
     })
 }
