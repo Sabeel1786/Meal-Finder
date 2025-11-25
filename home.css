@@ -227,6 +227,7 @@ body {
 
 .DropdownMenu ul li:hover {
     color: #E16120;
+    cursor: pointer;
 }
 
 .DropdownMenu .icon {

@@ -178,6 +178,7 @@ body {
 
 .DropdownMenu ul li:hover {
     color: #E16120;
+    cursor: pointer;
 }
 
 .DropdownMenu .icon {
@@ -222,9 +223,22 @@ body {
     transform: scale(0.90)
 }
 
-.CatDataCards .catTitle{
- padding:0px 5px;
- font-size: 18px;
- font-weight: 700;
-    
+.CatDataCards .catTitle {
+    padding: 0px 5px;
+    font-size: 18px;
+    font-weight: 700;
+
+}
+
+/* css for category description */
+.mealDescription {
+    display: inline-block;
+    width: auto;
+    border: 2px solid #E16120;
+    margin: 20px;
+    padding: 10px;
+}
+ .mealDescription h2{
+    color: #E16120;
+    font-size: large;
 }

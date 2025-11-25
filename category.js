@@ -1,4 +1,5 @@
 const selectedCategory = localStorage.getItem("selectedCategory");
+const selectedDescription = localStorage.getItem("selectedDescription")
 
 
 async function fetchingCategoryData(Category) {
@@ -8,12 +9,16 @@ async function fetchingCategoryData(Category) {
     DisplaycatData(resultData.meals)
 }
 
-fetchingCategoryData(selectedCategory);
+fetchingCategoryData(selectedCategory, selectedDescription);
 
 function DisplaycatData(products) {
+    const mealDescription = document.querySelector(".mealDescription")
     const category = document.querySelector(".category")
     const mealtitle = document.querySelector(".mealtitle")
     let CatData = "";
+    let CatDescription = `<div class="description box">
+    <h2 id="Destitle">${selectedCategory}</h2>
+    <p>${selectedDescription}</p></div>`
     let title = `<h1>MEALS</h1>
         <div class="line"></div>`;
     products.forEach((prod) => {
@@ -22,6 +27,7 @@ function DisplaycatData(products) {
                 <h5 class="catTitle">${prod.strMeal}</h5>
                 </div>`
     })
+    mealDescription.innerHTML = CatDescription
     mealtitle.innerHTML = title
     category.innerHTML = CatData
 }
@@ -37,16 +43,38 @@ icon.addEventListener("click", () => {
     menu.classList.remove("show");
 });
 
-const dropdownItems = document.querySelectorAll(".dropdown-list li");
+async function loadDropdown() {
+    const res = await fetch("https://www.themealdb.com/api/json/v1/1/categories.php");
+    const data = await res.json();
 
-dropdownItems.forEach(item => {
-    item.addEventListener("click", () => {
-        const categoryName = item.getAttribute("data-category");
+    const dropdownList = document.querySelector(".dropdown-list");
+    let listItems = "";
 
-        // Save to localStorage
-        localStorage.setItem("selectedCategory", categoryName);
-
-        // Redirect to category page
-        window.location.href = "category.html";
+    data.categories.forEach(cat => {
+        listItems += `
+            <li 
+                data-category="${cat.strCategory}" 
+                data-description="${cat.strCategoryDescription}">
+                ${cat.strCategory}
+            </li>
+        `;
     });
-});
+
+    dropdownList.innerHTML = listItems;
+
+    // Add click listeners
+    document.querySelectorAll(".dropdown-list li").forEach(item => {
+        item.addEventListener("click", () => {
+            const categoryName = item.getAttribute("data-category");
+            const description = item.getAttribute("data-description");
+
+            localStorage.setItem("selectedCategory", categoryName);
+            localStorage.setItem("selectedDescription", description);
+
+            window.location.href = "category.html";
+        });
+    });
+}
+
+loadDropdown();
+
