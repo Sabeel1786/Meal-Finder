@@ -12,18 +12,77 @@
 </head>
 
 <body>
+    <header>
+        <!-- nav bar start -->
+        <nav id="NavBar">
+            <div class="left">
+                <div class="icon"><i class="fa-solid fa-utensils"></i></div>
+                <div class="logo">
+                    <h1><a href="index.html">MEAL FINDER</a></h1>
+                </div>
+            </div>
+            <div class="right">
+                <div class="DropDownIcon">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+        <div class="DropdownMenu">
+            <div class="icon">
+                <i class="fa-regular fa-circle-xmark"></i>
+            </div>
+            <ul class="dropdown-list">
+            </ul>
+
+
+        </div>
+        <!-- nav bar end -->
+    </header>
+
+    <!-- main start -->
+    <section class="main">
+        <div class="banner">
+            <div class="bannerimg">
+                <img src="banner-img.jpg" alt="Banner-image">
+            </div>
+            <div class="searchCont">
+                <div class="search">
+                    <input type="search" id="filterproducts" placeholder="Search recipes here....">
+                    <p id="errormsg"></p>
+                </div>
+                <div class="search-icon">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+            </div>
+            <div class="bannercont">
+                <h2>What are your favourite cuisines</h2>
+                <span>PERSONALIZE YOUR EXPERIENCE</span>
+            </div>
+        </div>
 
     <nav id="DetailNav">
-        <div class="Dicons"></div>
+        <div class="Dicons">
+            <a href="index.html"><i class="fa-solid fa-house"></i></a>
+            <i class="fa-solid fa-angles-right"></i>
+        </div>
         <div class="Dtitle"></div>
     </nav>
     <h1>MEAL DETAILS</h1>
     <div class="line"></div>
     <div class="Details">
-        
+
     </div>
+    <div class="mealtitle"></div>
+        <div class="meal"></div>
+        <h1>CATEGORIES</h1>
+        <div class="line"></div>
+        <a href="category.html">
+            <div class="Category"></div>
+        </a>
+        </div>
 
     <script src="Details.js"></script>
+     <div class="loader" id="loader"></div>
 </body>
 
 </html>

@@ -22,7 +22,7 @@ function DisplaycatData(products) {
     let title = `<h1>MEALS</h1>
         <div class="line"></div>`;
     products.forEach((prod) => {
-        CatData += `<div class="CatDataCards">
+        CatData += `<div class="CatDataCards" Data-Detailes="${prod.idMeal}">
                 <img src="${prod.strMealThumb}" alt="${prod.strMeal}">
                 <h5 class="catTitle">${prod.strMeal}</h5>
                 </div>`
@@ -30,6 +30,16 @@ function DisplaycatData(products) {
     mealDescription.innerHTML = CatDescription
     mealtitle.innerHTML = title
     category.innerHTML = CatData
+    document.querySelectorAll(".CatDataCards").forEach((card)=>{
+        card.addEventListener("click",()=>{
+            const Card_Id =card.getAttribute("Data-Detailes");
+
+            localStorage.setItem("clickedId",Card_Id)
+
+            window.location.href="Details.html";
+        })
+
+    })
 }
 
 // Hamburger in navbar
