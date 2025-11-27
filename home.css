@@ -327,3 +327,164 @@ body {
     display: none;
 
 }
+
+/* media queries */
+
+/*  Large Tablets & Small Laptops (max-width: 1200px) */
+@media (max-width: 1200px) {
+
+    .Category,
+    .meal {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .banner .search input {
+        width: 320px;
+        height: 60px;
+    }
+
+    .banner .bannerimg img {
+        height: 400px;
+    }
+}
+
+/* Tablets (max-width: 992px) */
+@media (max-width: 992px) {
+    #NavBar {
+        height: 70px;
+        padding: 0px 10px;
+    }
+
+    .Category,
+    .meal {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .banner .search input {
+        width: 280px;
+        height: 55px;
+        font-size: medium;
+    }
+
+    .banner .searchCont {
+        top: -250px;
+    }
+
+    .banner .bannerimg img {
+        height: 350px;
+    }
+
+    .banner .bannercont {
+        font-size: 20px;
+        bottom: 260px;
+    }
+
+    .DropdownMenu {
+        width: 40vw;
+    }
+}
+
+/*  Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+    #NavBar .left .logo h1 a {
+        font-size: 22px;
+    }
+
+    .right .DropDownIcon i {
+        font-size: 24px;
+    }
+
+    /* Banner */
+    .banner .bannerimg img {
+        height: 300px;
+    }
+
+    .banner .search input {
+        width: 220px;
+        height: 50px;
+        padding: 0px 25px;
+        font-size: 15px;
+    }
+
+    .banner .searchCont .search-icon {
+        width: 55px;
+        height: 55px;
+        font-size: 18px;
+    }
+
+    .banner .searchCont {
+        top: -210px;
+    }
+
+    .banner .bannercont {
+        font-size: 18px;
+        bottom: 230px;
+    }
+
+    /* Cards */
+    .Category,
+    .meal {
+        grid-template-columns: 1fr;
+    }
+
+    .Category .CategoryProducts,
+    .meal #mealprod {
+        margin: 15px 25px;
+    }
+
+    /* Hamburger menu */
+    .DropdownMenu {
+        width: 60vw;
+    }
+}
+
+/* Small Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+
+    /* Navbar */
+    #NavBar .left .logo h1 a {
+        font-size: 18px;
+    }
+
+    .right .DropDownIcon i {
+        font-size: 22px;
+    }
+
+    /* Banner */
+    .banner .bannerimg img {
+        height: 260px;
+    }
+
+    .banner .search input {
+        width: 180px;
+        height: 45px;
+        padding: 0px 18px;
+        font-size: 14px;
+    }
+
+    .banner .searchCont .search-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 16px;
+    }
+
+    .banner .searchCont {
+        top: -180px;
+    }
+
+    .banner .bannercont {
+        font-size: 16px;
+        bottom: 200px;
+    }
+
+    /* Category & meal cards */
+    .Category .CategoryProducts,
+    .meal #mealprod {
+        margin: 10px 15px;
+    }
+
+    /* Dropdown */
+    .DropdownMenu {
+        width: 75vw;
+    }
+}

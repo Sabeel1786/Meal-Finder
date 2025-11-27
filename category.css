@@ -242,3 +242,180 @@ body {
     color: #E16120;
     font-size: large;
 }
+
+
+/* Media queries */
+/*  Large Tablets (max-width: 1200px) */
+@media (max-width: 1200px) {
+    .category {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .banner .bannerimg img {
+        height: 420px;
+    }
+
+    .banner .search input {
+        width: 330px;
+        height: 60px;
+    }
+}
+
+/*  Tablets (max-width: 992px) */
+@media (max-width: 992px) {
+
+    #NavBar {
+        height: 70px;
+        padding: 0 15px;
+    }
+
+    .right .DropDownIcon i {
+        font-size: 25px;
+    }
+
+    .banner .bannerimg img {
+        height: 360px;
+    }
+
+    .banner .searchCont {
+        top: -260px;
+    }
+
+    .banner .search input {
+        width: 280px;
+        height: 55px;
+        font-size: medium;
+    }
+
+    .banner .searchCont .search-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 20px;
+    }
+
+    .banner .bannercont {
+        font-size: 20px;
+        bottom: 250px;
+    }
+
+    .category {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .DropdownMenu {
+        width: 40vw;
+    }
+
+    .mealDescription {
+        margin: 15px;
+        padding: 8px;
+    }
+}
+
+/*  Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+
+    #NavBar .left .logo h1 a {
+        font-size: 22px;
+    }
+
+    .right .DropDownIcon i {
+        font-size: 22px;
+    }
+
+    /* Banner */
+    .banner .bannerimg img {
+        height: 300px;
+    }
+
+    .banner .search input {
+        width: 220px;
+        height: 50px;
+        font-size: 15px;
+        padding: 0 25px;
+    }
+
+    .banner .searchCont .search-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 16px;
+    }
+
+    .banner .searchCont {
+        top: -210px;
+    }
+
+    .banner .bannercont {
+        font-size: 18px;
+        bottom: 220px;
+    }
+
+    /* Cards stack */
+    .category {
+        grid-template-columns: 1fr;
+    }
+
+    .CatDataCards {
+        margin: 15px 25px;
+    }
+
+    .DropdownMenu {
+        width: 60vw;
+    }
+
+    .mealDescription {
+        margin: 10px;
+        font-size: 14px;
+    }
+}
+
+/*  Small Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+
+    #NavBar .left .logo h1 a {
+        font-size: 18px;
+    }
+
+    .right .DropDownIcon i {
+        font-size: 20px;
+    }
+
+    .banner .bannerimg img {
+        height: 250px;
+    }
+
+    .banner .search input {
+        width: 170px;
+        height: 45px;
+        font-size: 13px;
+        padding: 0 18px;
+    }
+
+    .banner .searchCont .search-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 14px;
+    }
+
+    .banner .searchCont {
+        top: -170px;
+    }
+
+    .banner .bannercont {
+        font-size: 15px;
+        bottom: 190px;
+    }
+
+    .CatDataCards {
+        margin: 10px 15px;
+    }
+
+    .DropdownMenu {
+        width: 75vw;
+    }
+
+    .mealDescription {
+        font-size: 13px;
+        margin: 8px;
+    }
+}

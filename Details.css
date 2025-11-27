@@ -141,30 +141,33 @@ body h1,
     margin: 10px 0px;
 }
 
-.measure .measureContainer ul{
+.measure .measureContainer ul {
     margin: 10px;
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
-.measure .measureContainer ul li{
+
+.measure .measureContainer ul li {
     padding: 9px;
     list-style: none;
-     position: relative;
-    padding-left: 25px; 
+    position: relative;
+    padding-left: 25px;
 }
-.measure .measureContainer ul li i{
+
+.measure .measureContainer ul li i {
     color: #E16120;
 }
 
-.instructions span{
+.instructions span {
     margin-left: 25px;
 }
 
-.instructions ul li{
+.instructions ul li {
     padding: 10px;
     list-style: none;
 }
-.instructions ul li i{
+
+.instructions ul li i {
     color: #E16120;
 }
 
@@ -489,4 +492,240 @@ body {
 
 .CategoryProducts img:hover {
     transform: scale(0.90)
+}
+
+/* ===========================
+    MOBILE RESPONSIVE (0–600px)
+=========================== */
+@media (max-width: 600px) {
+
+    /* NAVBAR */
+    #NavBar {
+        height: 60px;
+        padding: 0 15px;
+    }
+
+    #NavBar .left .logo h1 {
+        font-size: 18px;
+    }
+
+    .right .DropDownIcon {
+        padding: 0 15px;
+    }
+
+    .right .DropDownIcon i {
+        font-size: 22px;
+    }
+
+    .DropdownMenu {
+        width: 65vw;
+    }
+
+    /* BANNER */
+    .banner .bannerimg img {
+        height: 240px;
+    }
+
+    .banner .search input {
+        width: 210px;
+        height: 50px;
+        font-size: 14px;
+        padding: 0 20px;
+    }
+
+    .banner .searchCont .search-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 18px;
+    }
+
+    .banner .bannercont {
+        font-size: 18px;
+        bottom: 250px;
+    }
+
+    /* CATEGORY CARDS */
+    .category,
+    .meal,
+    .Category {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* PRODUCT CARD IMAGE */
+    #mealprod img {
+        height: 180px;
+    }
+
+    /* DETAIL PAGE SPACING FIXES */
+    .DetailContainer {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+    .DetailContainer .cardImage {
+        margin-bottom: 20px;
+    }
+
+    .DetailContainer .cardImage img {
+        height: 40vh;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .cardDetails {
+        padding: 15px;
+        margin: 10px 0;
+    }
+
+    .Details {
+        margin: 20px 10px;
+        padding: 15px;
+    }
+
+    /* Ingredients Box */
+    .cardDetails .Ingredients {
+        width: 90vw;
+        margin: 25px auto;
+    }
+
+    .Ingredients ol {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* Measure Section */
+    .measure {
+        margin: 30px 10px;
+    }
+
+    .measure .measureContainer {
+        margin-top: 15px;
+        padding: 15px;
+    }
+
+    .measure .measureContainer ul {
+        grid-template-columns: 1fr;
+    }
+
+    /* Instructions */
+    .instructions ul li {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+
+/* ===========================
+    TABLET RESPONSIVE (600–1024px)
+=========================== */
+@media (min-width: 600px) and (max-width: 1024px) {
+
+    /* NAVBAR */
+    #NavBar {
+        height: 70px;
+        padding: 0 20px;
+    }
+
+    .DropdownMenu {
+        width: 40vw;
+    }
+
+    /* BANNER */
+    .banner .bannerimg img {
+        height: 360px;
+    }
+
+    .banner .search input {
+        width: 280px;
+        height: 60px;
+        font-size: 17px;
+    }
+
+    /* CATEGORY CARDS */
+    .category,
+    .meal,
+    .Category {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    /* DETAIL PAGE SPACING FIXES */
+    .DetailContainer {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+        margin-top: 30px;
+    }
+
+    .DetailContainer .cardImage {
+        margin-bottom: 25px;
+    }
+
+    .DetailContainer .cardImage img {
+        height: 50vh;
+        width: 90%;
+        margin: auto;
+        object-fit: cover;
+    }
+
+    .cardDetails {
+        padding: 20px;
+        margin: 15px 0;
+    }
+
+    .Details {
+        margin: 30px 20px;
+        padding: 20px;
+    }
+
+    /* Ingredients */
+    .cardDetails .Ingredients {
+        width: 80vw;
+        margin: 30px auto;
+    }
+
+    .Ingredients ol {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    /* Measure Section */
+    .measure {
+        margin: 40px 20px;
+    }
+
+    .measure .measureContainer {
+        margin-top: 20px;
+        padding: 20px;
+    }
+
+    .measure .measureContainer ul {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* ===========================
+    DESKTOP LARGE SCREEN FIXES
+=========================== */
+@media (min-width: 1024px) {
+
+    .category,
+    .meal,
+    .Category {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    .Ingredients ol {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .measure .measureContainer ul {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .DetailContainer {
+        gap: 40px;
+    }
+
+    .DetailContainer .cardImage img {
+        height: 85vh;
+    }
 }
