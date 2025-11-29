@@ -9,7 +9,7 @@ async function fetchingCategoryData(Category) {
     DisplaycatData(resultData.meals)
 }
 
-fetchingCategoryData(selectedCategory, selectedDescription);
+fetchingCategoryData(selectedCategory);
 
 function DisplaycatData(products) {
     const mealDescription = document.querySelector(".mealDescription")
